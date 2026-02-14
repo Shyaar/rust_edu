@@ -4,7 +4,6 @@
 
 //     println!("{cake}")
 
-
 // }
 
 // fn bake_cake()-> String {
@@ -12,38 +11,48 @@
 // }
 
 
-fn main(){
-    let is_correct = true;
-    let is_event = is_correct;
+// fn main() {
+//     let is_correct = true;
+//     let is_event = is_correct;
 
-    let is_booked = is_correct;
+//     let is_booked = is_correct;
 
-    println!("{is_correct},{is_event}, {is_booked}");
+//     println!("{is_correct},{is_event}, {is_booked}");
 
+//     // no
 
-    // no
+//     let sushi = "Salmon";
+//     let dinner = sushi;
 
+//     let _food = sushi;
 
-    let sushi = "Salmon";
-    let dinner = sushi;
+//     println!("{sushi},{dinner}");
+//     // no
 
-    let _food = sushi;
+//     let sushi = String::from("shushi");
+//     let _dinner = sushi;
 
-    println!("{sushi},{dinner}");
-    // no
+//     // println!("{sushi1}{dinner1}");
+//     // yes
 
-    let sushi = String::from ("shushi");
-    let _dinner = sushi;
+//     let food = add_to_menu(String::from("salmon"));
 
-    // println!("{sushi1}{dinner1}");
-    // yes
+//     println!("{food}");
+//     menu(&food);
+// }
 
-    let food = eat_meal(String::from("salmon"));
+fn main() {
+    let mut food = String::from ("Salmon");
+    add_to_menu(&mut food);
 
-    println!("{food}")
-
+    println!("{food}");
+    menu(&food);
 }
 
-fn eat_meal(meal:String) -> String{
-    meal
+fn add_to_menu(meal: &mut String)  {
+    meal.push_str(" Rice");
+}
+
+fn menu(meal: &String) {
+    println!("this is menu {meal}");
 }

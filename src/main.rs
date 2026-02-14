@@ -58,10 +58,19 @@
 // }
 
 
-fn main(){
-    let mut car = String::from ("BMW");
-    let ref1 = &mut car;
-    let ref2 = &car;
+// fn main(){
+//     let mut car = String::from ("BMW");
+//     let ref1 = &mut car;
+//     let ref2 = &mut car;
 
-    println!("{ref2}");
+//     println!("{ref2}");
+// }
+
+fn main(){
+    let _tea = make_tea();
+
+}
+
+fn make_tea() -> String{
+    String::from("british")
 }

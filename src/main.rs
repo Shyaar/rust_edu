@@ -79,6 +79,11 @@ fn main(){
     let level = (String::from("100"),String::from("200"));
     let first_level = & level.0;
 
+    let class= vec![String::from("1"),String::from("1"),String::from("1")];
+    let first = &class[0];
+
+    println!("this is first {first}, this is class{class:?}");
+
     println!("{first_level}, {level:?}");
 
 }

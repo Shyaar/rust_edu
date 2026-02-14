@@ -66,11 +66,19 @@
 //     println!("{ref2}");
 // }
 
+// fn main(){
+//     let _tea = make_tea();
+
+// }
+
+// fn make_tea() -> String{
+//     String::from("british")
+// }
+
 fn main(){
-    let _tea = make_tea();
+    let level = (String::from("100"),String::from("200"));
+    let first_level = & level.0;
 
-}
+    println!("{first_level}, {level:?}");
 
-fn make_tea() -> String{
-    String::from("british")
 }

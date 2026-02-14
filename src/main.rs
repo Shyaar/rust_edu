@@ -1,20 +1,24 @@
+// fn main(){
 
-fn add_age(mut age: i32 ){
-    age+=1;
-    println!("{age}")
-}
+//     let cake = bake_cake();
 
-
-fn prnt_name(name:String){
-    println!("{name}");
-}
-fn main() {
-    let age = 32;
-    add_age(age);
-
-    let name = String::from ("Joseph");
-    prnt_name(name);
+//     println!("{cake}")
 
 
+// }
 
+// fn bake_cake()-> String {
+//     String::from ("chocolate cake")
+// }
+
+
+fn main(){
+    let is_correct = true;
+    let is_event = is_correct;
+
+    let is_booked = is_correct;
+
+    // no
+
+    println!("{is_correct},{is_event}, {is_booked}")
 }

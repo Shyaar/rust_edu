@@ -40,8 +40,10 @@ fn main(){
 
     let food = eat_meal(String::from("salmon"));
 
+    println!("{food}")
+
 }
 
-fn eat_meal(mut meal:String){
-    meal.clear();
+fn eat_meal(meal:String) -> String{
+    meal
 }

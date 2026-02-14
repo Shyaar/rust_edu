@@ -41,18 +41,27 @@
 //     menu(&food);
 // }
 
-fn main() {
-    let mut food = String::from ("Salmon");
-    add_to_menu(&mut food);
+// fn main() {
+//     let mut food = String::from ("Salmon");
+//     add_to_menu(&mut food);
 
-    println!("{food}");
-    menu(&food);
-}
+//     println!("{food}");
+//     menu(&food);
+// }
 
-fn add_to_menu(meal: &mut String)  {
-    meal.push_str(" Rice");
-}
+// fn add_to_menu(meal: &mut String)  {
+//     meal.push_str(" Rice");
+// }
 
-fn menu(meal: &String) {
-    println!("this is menu {meal}");
+// fn menu(meal: &String) {
+//     println!("this is menu {meal}");
+// }
+
+
+fn main(){
+    let mut car = String::from ("BMW");
+    let ref1 = &mut car;
+    let ref2 = &car;
+
+    println!("{ref2}");
 }

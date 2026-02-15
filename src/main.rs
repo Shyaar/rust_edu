@@ -122,15 +122,24 @@
 //     println!("{trip}")
 // }
 
+// fn main(){
+//     let name = "John Doe";
+//     let ref_name = &name;
+
+//     let first_name = &name[0..=3];
+//     let last_name = &name[5..];
+
+//     println!("{first_name} {last_name}");
+// }
+
 fn main(){
-    let name = String::from("John Doe");
+      let name = "John Doe";
     let ref_name = &name;
 
-    let first_name = &name[0..=3];
+    let first_name = &name[..4];
     let last_name = &name[5..];
 
-    println!("{first_name} {last_name}");
+    let full_name = &name[..];
 
-
-
+    println!("{first_name} {last_name} \nthis is full name {full_name}");
 }

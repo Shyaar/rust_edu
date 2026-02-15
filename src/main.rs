@@ -75,15 +75,62 @@
 //     String::from("british")
 // }
 
+// fn main(){
+//     let level = (String::from("100"),String::from("200"));
+//     let first_level = & level.0;
+
+//     let class= vec![String::from("1"),String::from("1"),String::from("1")];
+//     let first = &class[0];
+
+//     println!("this is first {first}, this is class{class:?}");
+
+//     println!("{first_level}, {level:?}");
+
+// }
+
+// fn main(){
+
+//     let mut trip = start_trip();
+//     visit_philli(&mut trip);
+//     trip.push_str(" and ");
+//     visit_ny(&mut trip);
+//     trip.push_str(" and ");
+//     visit_bst(&mut trip);
+//     trip.push('.');
+
+//     show_art(&trip);
+
+// }
+
+// fn start_trip() ->String{
+//     String::from("this trip is")
+// }
+
+// fn visit_philli(trip:&mut String){
+//     trip.push_str(" Phili");
+// }
+
+// fn visit_ny(trip:&mut String){
+//     trip.push_str("New y");
+// }
+
+// fn visit_bst(trip:&mut String){
+//     trip.push_str("boston");
+// }
+
+// fn show_art(trip: &String){
+//     println!("{trip}")
+// }
+
 fn main(){
-    let level = (String::from("100"),String::from("200"));
-    let first_level = & level.0;
+    let name = String::from("John Doe");
+    let ref_name = &name;
 
-    let class= vec![String::from("1"),String::from("1"),String::from("1")];
-    let first = &class[0];
+    let first_name = &name[0..=3];
+    let last_name = &name[5..];
 
-    println!("this is first {first}, this is class{class:?}");
+    println!("{first_name} {last_name}");
 
-    println!("{first_level}, {level:?}");
+
 
 }

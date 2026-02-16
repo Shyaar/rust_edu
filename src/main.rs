@@ -55,5 +55,10 @@ fn main(){
 
     println!("this is {cookie}");
 
+    let cocoa_puffs = &cereals[3];
+    let puffs = &cocoa_puffs[6..];
+
+    println!("this is {puffs}")
+
 }
 

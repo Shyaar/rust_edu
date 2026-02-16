@@ -5,16 +5,21 @@ fn main(){
         is_admin: bool,
     }
 
-    let john = Staff{
+    let mut john = Staff{
         age: 32,
         name: String::from("John Doe"),
         is_admin:false
     };
 
     let johns_age = john.age;
-    let johns_name = &john.name;
 
-    println!("{} is {johns_age} and his admin status is {}", john.name, john.is_admin);
+    john.name = String::from("John David");
+    john.age =33;
+    john.is_admin = true;
+
+
+
+    println!("{} is {} and his admin status is {}", john.name, john.age, john.is_admin);
 
 
 }

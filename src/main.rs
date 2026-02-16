@@ -49,5 +49,11 @@ fn main(){
     last_three[2] = String::from ("Lucky Charms");
 
     println!("this is cereals {cereals:?}");
+
+    let cookie_crips = &cereals[0];
+    let cookie = &cookie_crips[0..7];
+
+    println!("this is {cookie}");
+
 }
 

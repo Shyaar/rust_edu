@@ -34,8 +34,8 @@ fn main(){
 
 fn add_staff(name:String, age:u32, is_admin:bool)-> Staff{
     Staff { 
-        name:name, 
-        age:age, 
-        is_admin:is_admin 
+        name, 
+        age, 
+        is_admin 
     }
 }

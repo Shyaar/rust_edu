@@ -132,14 +132,45 @@
 //     println!("{first_name} {last_name}");
 // }
 
+// fn main(){
+//       let name = "John Doe";
+//     let ref_name = &name;
+
+//     let first_name = &name[..4];
+//     let last_name = &name[5..];
+
+//     let full_name = &name[..];
+
+//     println!("{first_name} {last_name} \nthis is full name {full_name}");
+// }
+
+// fn main(){
+//     let area = String::from("Lamingo");
+//     let another_area = "Haske";
+//     go_to_area(&another_area);
+//     go_to_area(&area);
+// }
+
+// fn go_to_area(area: &str){
+//     println!("going to {area}")
+// }
+
+// fn main(){
+//     let names = ["john", "doe", "jane", "joe"];
+//     let first = &names[..=1];
+
+//     println!("this is first studen {first:?}")
+// }
+
 fn main(){
-      let name = "John Doe";
-    let ref_name = &name;
+    let mut array:[i32; 5] = [1,2,3,4,5];
+    let slice = &mut array[1..4];
 
-    let first_name = &name[..4];
-    let last_name = &name[5..];
+    println!("{slice:?}");
 
-    let full_name = &name[..];
+    slice[0]=100;
 
-    println!("{first_name} {last_name} \nthis is full name {full_name}");
+    println!("{slice:?}");
+    println!("{array:?}");
+
 }

@@ -71,7 +71,7 @@
 #[derive(Debug)]
 #[allow(unused_variables)]
 #[allow(unused)]
-struct  Songs{
+struct Songs {
     artist: String,
     title: String,
     release: u32,
@@ -79,38 +79,52 @@ struct  Songs{
 }
 
 impl Songs {
-    fn display_info(&self){
-        println!("title {:#?} this song has been out for: {} years", self, self.years_since_release());
+    fn new(title: String, artist: String, release: u32, duration: u32) -> Songs {
+        Self {
+            artist,
+            title,
+            release,
+            duration,
+        }
+    }
+}
 
+impl Songs {
+    fn display_info(&self) {
+        println!(
+            "title {:#?} this song has been out for: {} years",
+            self,
+            self.years_since_release()
+        );
     }
 
-    fn increase_len(&mut self, time:u32 ){
+    fn increase_len(&mut self, time: u32) {
         self.duration = self.duration * time;
         println!("{:#?}", self)
     }
 
-    fn compare_len(&self, other_song: &Self)-> bool{
+    fn compare_len(&self, other_song: &Self) -> bool {
         self.duration > other_song.duration
     }
 
-    fn years_since_release (&self) -> u32{
+    fn years_since_release(&self) -> u32 {
         2026 - self.release
     }
 }
-fn main(){
-    let  kendrick = Songs{
-        title: String::from("Rich Spirit"),
-        artist: String::from("Kdot"),
-        release: 2023,
-        duration: 3,
-    };
+fn main() {
+    // let  kendrick = Songs{
+    //     title: String::from("Rich Spirit"),
+    //     artist: String::from("Kdot"),
+    //     release: 2023,
+    //     duration: 3,
+    // };
 
-        let drake = Songs{
-        title: String::from("Gods Plan"),
-        artist: String::from("Drake"),
-        release: 2023,
-        duration: 5,
-    };
+    //     let drake = Songs{
+    //     title: String::from("Gods Plan"),
+    //     artist: String::from("Drake"),
+    //     release: 2023,
+    //     duration: 5,
+    // };
 
     // let all_songs=(&drake,&kendrick);
     // println!("{all_songs:#?}");
@@ -119,10 +133,14 @@ fn main(){
     //     println!("Kendricks {} is longer than drakes {}", kendrick.title, drake.title);
     // }else {
     //     println!("drakes {} is longer than kendrick {}", drake.title, kendrick.title);
-        
+
     // }
     // drake.compare_len(&kendrick);
 
-    kendrick.display_info();
+    // kendrick.display_info();
 
+    let jay_z = Songs::new(String::from("4:44"), String::from("Jayz"), 2022, 5);
+
+    println!("{jay_z:#?}");
+    jay_z.display_info();
 }

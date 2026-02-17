@@ -80,7 +80,8 @@ struct  Songs{
 
 impl Songs {
     fn display_info(&self){
-        println!("title {:#?}", self);
+        println!("title {:#?} this song has been out for: {} years", self, self.years_since_release());
+
     }
 
     fn increase_len(&mut self, time:u32 ){
@@ -91,9 +92,13 @@ impl Songs {
     fn compare_len(&self, other_song: &Self)-> bool{
         self.duration > other_song.duration
     }
+
+    fn years_since_release (&self) -> u32{
+        2026 - self.release
+    }
 }
 fn main(){
-    let mut kendrick = Songs{
+    let  kendrick = Songs{
         title: String::from("Rich Spirit"),
         artist: String::from("Kdot"),
         release: 2023,
@@ -107,13 +112,17 @@ fn main(){
         duration: 5,
     };
 
-    kendrick.increase_len(2);
-    if kendrick.compare_len(&drake){
-        println!("Kendricks {} is longer than drakes {}", kendrick.title, drake.title);
-    }else {
-        println!("drakes {} is longer than kendrick {}", drake.title, kendrick.title);
+    // let all_songs=(&drake,&kendrick);
+    // println!("{all_songs:#?}");
+    // kendrick.increase_len(2);
+    // if kendrick.compare_len(&drake){
+    //     println!("Kendricks {} is longer than drakes {}", kendrick.title, drake.title);
+    // }else {
+    //     println!("drakes {} is longer than kendrick {}", drake.title, kendrick.title);
         
-    }
-    drake.compare_len(&kendrick);
+    // }
+    // drake.compare_len(&kendrick);
+
+    kendrick.display_info();
 
 }

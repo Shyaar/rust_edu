@@ -27,6 +27,20 @@ fn main(){
 
     let new_staff = add_staff(staff_name, 32,true);
 
+    let new_staff2 = Staff{
+        name: String::from("jason bourne"),
+        age: 28,
+        is_admin: new_staff.is_admin,
+    };
+
+    let _new_staff3 = Staff{
+        name: String::from("john wick"),
+        ..new_staff2
+    };
+
+    let new_staff4 = Staff{name:new_staff.name.clone(), ..new_staff};
+    println!("{}", new_staff.name);
+
     println!("the new staff {} is {} and admin stats is {}",new_staff.name, new_staff.age, new_staff.is_admin);
 
 

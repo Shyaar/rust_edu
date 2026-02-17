@@ -70,7 +70,8 @@
 
 #[derive(Debug)]
 #[allow(unused_variables)]
-struct Songs{
+#[allow(unused)]
+struct  Songs{
     artist: String,
     title: String,
     release: u32,
@@ -78,24 +79,30 @@ struct Songs{
 }
 
 impl Songs {
-    fn display_info(self){
+    fn display_info(&self){
         println!("title {:#?}", self);
     }
 
-    fn increase_len(mut self){
+    fn increase_len(&mut self ){
         self.duration = self.duration *2;
         println!("{:#?}", self)
     }
 
+    fn compare_len(&self, other_song: &Self)-> bool{
+        // self.duration > other_song.duration
+        assert_eq!(self.duration,other_song.duration)
+    }
 }
 fn main(){
-    let kendrick = Songs{
+    let mut kendrick = Songs{
         title: String::from("Rich Spirit"),
         artist: String::from("Kdot"),
         release: 2023,
         duration: 3,
     };
 
+    kendrick.display_info();
     kendrick.increase_len();
+    kendrick.display_info();
 
 }

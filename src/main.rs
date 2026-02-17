@@ -36,4 +36,13 @@ fn main(){
     new_flight.itinerary();
     new_flight.change_dest(String::from("lagos"))
     .increase_price(50000.900).itinerary();
+
+    let new_flight2 = Flight{
+        origin:String::from("Kano"), 
+        destination: String::from("Adamawa"),
+        ..new_flight
+    };
+
+    new_flight2.itinerary();
+
 }

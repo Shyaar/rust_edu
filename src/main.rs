@@ -83,14 +83,13 @@ impl Songs {
         println!("title {:#?}", self);
     }
 
-    fn increase_len(&mut self ){
-        self.duration = self.duration *2;
+    fn increase_len(&mut self, time:u32 ){
+        self.duration = self.duration * time;
         println!("{:#?}", self)
     }
 
     fn compare_len(&self, other_song: &Self)-> bool{
-        // self.duration > other_song.duration
-        assert_eq!(self.duration,other_song.duration)
+        self.duration > other_song.duration
     }
 }
 fn main(){
@@ -101,8 +100,20 @@ fn main(){
         duration: 3,
     };
 
-    kendrick.display_info();
-    kendrick.increase_len();
-    kendrick.display_info();
+        let drake = Songs{
+        title: String::from("Gods Plan"),
+        artist: String::from("Drake"),
+        release: 2023,
+        duration: 5,
+    };
+
+    kendrick.increase_len(2);
+    if kendrick.compare_len(&drake){
+        println!("Kendricks {} is longer than drakes {}", kendrick.title, drake.title);
+    }else {
+        println!("drakes {} is longer than kendrick {}", drake.title, kendrick.title);
+        
+    }
+    drake.compare_len(&kendrick);
 
 }

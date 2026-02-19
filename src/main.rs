@@ -1,48 +1,22 @@
+
 #[derive(Debug)]
-struct  Flight{
-    origin: String,
-    destination: String,
-    price: f64,
-    passengers: u32,
+#[allow(unused,unused_variables)]
+enum CardSuit {
+    Hearts,
+    Diamonds,
+    Spades,
+    Clubs,
 }
 
-impl Flight {
-    fn new(origin:String, destination:String, price:f64, passengers:u32)->Self{
-     Self{origin, destination,price,passengers}   
-    }
-}
-
-impl Flight {
-    fn change_dest(&mut self, new_destination:String)->&mut Self{
-        self.destination =new_destination;
-        self
-    }
-
-    fn increase_price(&mut self, new_price:f64)->&mut Self{
-        self.price =new_price;
-        self
-    }
-
-    fn itinerary (&self){
-        println!("origin {} -> destination {}", self.origin, self.destination);
-    }
-
-
-    
+struct Card {
+    rank: String,
+    suit: CardSuit,
 }
 fn main(){
-    let mut new_flight = Flight::new(String::from("jos"), String::from("Abuja"), 25000.500, 120);
+    let firstCard = CardSuit::Hearts;
+    let mut secondcard=CardSuit::Spades;
+    let secondhad = CardSuit::Clubs;
 
-    new_flight.itinerary();
-    new_flight.change_dest(String::from("lagos"))
-    .increase_price(50000.900).itinerary();
-
-    let new_flight2 = Flight{
-        origin:String::from("Kano"), 
-        destination: String::from("Adamawa"),
-        ..new_flight
-    };
-
-    new_flight2.itinerary();
+    let suits = [CardSuit::Hearts, CardSuit::Clubs];
 
 }

@@ -39,22 +39,29 @@
 // }
 
 
+enum Veggies {
+    Onions,
+    Tomatoe,
+}
+#[derive(Debug)]
+
 enum Meat {
     Chiken,
     Beef,
 }
 
 #[derive(Debug)]
+
 enum Meal {
-    Sharawma(Meat),
-    SandWich(Meat),
+    Sharawma{meat: Meat, veggie: Veggies},
+    SandWich{meat: Meat, veggie: Veggies},
     Stew,
 }
 
 fn main(){
-    let order = Meal::SandWich(Meat::Beef);
-    let order2= Meal::Sharawma(Meat::Chiken);
+    let order = Meal::SandWich{meat: Meat::Beef, veggie:Veggies::Tomatoe};
+    let order2= Meal::Sharawma{meat:Meat::Chiken, veggie:Veggies::Tomatoe};
 
-    println!("order 1 :::: {:?}", order);
-    println!("Order 2 >>>> {:?}", order2);
+    println!("order 1 :::: {:#?}", order);
+    println!("Order 2 >>>> {:#?}", order2);
 }

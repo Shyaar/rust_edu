@@ -2,10 +2,10 @@
 #[derive(Debug)]
 #[allow(unused,unused_variables)]
 enum CardSuit {
-    Hearts,
-    Diamonds,
-    Spades,
-    Clubs,
+    Hearts(String),
+    Diamonds(String),
+    Spades(String),
+    Clubs(String),
 }
 
 struct Card {
@@ -13,10 +13,9 @@ struct Card {
     suit: CardSuit,
 }
 fn main(){
-    let firstCard = CardSuit::Hearts;
-    let mut secondcard=CardSuit::Spades;
-    let secondhad = CardSuit::Clubs;
+    let firstCard= CardSuit::Hearts(String::from ("10"));
 
-    let suits = [CardSuit::Hearts, CardSuit::Clubs];
 
+    println!("{:?}", firstCard);
+    
 }

@@ -1,16 +1,29 @@
 
 #[derive(Debug)]
 #[allow(unused,unused_variables)]
+
+struct Credentials{
+    username: String,
+    password: String,
+}
+#[derive(Debug)]
+
 enum Payment {
     CreditCard(String),
-    DebitCard(String, String),
+    DebitCard(Credentials),
     Wallet(String),
 }
 fn main(){
-    let mut pay_with_card = Payment::CreditCard(String::from("540-60-12"));
-     pay_with_card = Payment::DebitCard(String::from("James"), String::from("231-099-890"));
 
-     println!("{:?}", pay_with_card)
+    let credents = Credentials{
+        username: String::from ("doe@mail.com"),
+        password: String::from ("12345")
+    };
+
+    let mut pay_with_card = Payment::CreditCard(String::from("540-60-12"));
+    let pay_debit = Payment::DebitCard(credents);
+
+     println!("{:?}\n{:?}", pay_with_card, pay_debit);
 
 
 

@@ -1,67 +1,53 @@
-#[derive(Debug)]
-#[allow(unused, unused_variables)]
-
-// struct Credentials {
-//     username: String,
-//     password: String,
-// }
-// #[derive(Debug)]
-
-// enum Payment {
-//     CreditCard(String),
-//     DebitCard(Credentials),
-//     Wallet { address: String, user_id: u32 },
+// enum Os {
+//     Windows,
+//     Mac,
+//     Linux,
 // }
 
-// impl Payment{
+// fn main(){
+//     let my_pc = Os::Linux;
 
-//     fn new(address:String, user_id:u32)->Self{
-//         Self::Wallet { address, user_id }
+//     let age = year_release(my_pc);
+
+//     println!("{age}")
+// }
+
+// fn year_release(os: Os) -> u32{
+
+//     match os {
+//         Os::Windows => 39,
+//         Os::Mac => 23,
+//         Os::Linux => 34,
 //     }
 // }
-// fn main() {
-//     let credents = Credentials {
-//         username: String::from("doe@mail.com"),
-//         password: String::from("12345"),
-//     };
-
-//     let mut pay_with_card = Payment::CreditCard(String::from("540-60-12"));
-//     let pay_debit = Payment::DebitCard(credents);
-
-//     let use_wallet = Payment::Wallet {
-//         address: String::from("0x1111"),
-//         user_id: (1),
-//     };
-
-//     let user2 = Payment::Wallet.new();
-
-//     println!("{:?}\n{:?}\n{:#?}", pay_with_card, pay_debit, use_wallet);
-// }
-
-
-enum Veggies {
-    Onions,
-    Tomatoe,
-}
 #[derive(Debug)]
-
-enum Meat {
-    Chiken,
-    Beef,
-}
-
-#[derive(Debug)]
-
-enum Meal {
-    Sharawma{meat: Meat, veggie: Veggies},
-    SandWich{meat: Meat, veggie: Veggies},
-    Stew,
+enum Breverage{
+    Tea,
+    Cocoa{ temprature: u32},
+    Coffee(String)
 }
 
 fn main(){
-    let order = Meal::SandWich{meat: Meat::Beef, veggie:Veggies::Tomatoe};
-    let order2= Meal::Sharawma{meat:Meat::Chiken, veggie:Veggies::Tomatoe};
+    let cocoa_temp = 30;
+    let coffee = String::from ("english");
 
-    println!("order 1 :::: {:#?}", order);
-    println!("Order 2 >>>> {:#?}", order2);
+    order_breverage(Breverage::Cocoa { temprature: cocoa_temp });
+
+    order_breverage(Breverage::Coffee(coffee));
+
+    order_breverage(Breverage::Tea);
+}
+
+fn order_breverage(breverage: Breverage){
+    match breverage{
+        Breverage::Coffee(_type) => {
+            println!("You ordered {:?}", Breverage::Coffee(_type));
+        },
+        Breverage::Cocoa { temprature } =>{
+            println!("You ordered {:#?}", Breverage::Cocoa{temprature});
+        },
+        Breverage::Tea =>{
+            println!("You ordered {:#?}", Breverage::Tea);
+        }
+    }
 }

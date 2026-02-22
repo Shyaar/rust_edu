@@ -54,4 +54,6 @@ fn main() {
     };
 
     new_flight2.itinerary();
+
+    
 }

@@ -21,11 +21,20 @@
 //     }
 // }
 #[derive(Debug)]
+#[allow(unused_variables)]
 enum Breverage{
-    Tea,
+    Tea{_type: TeaTypes},
     Cocoa{ temprature: u32},
     Coffee(String)
 }
+
+#[derive(Debug)]
+enum TeaTypes{
+    English,
+    French,
+    Arabian
+}
+
 
 fn main(){
     let cocoa_temp = 30;
@@ -35,7 +44,7 @@ fn main(){
 
     order_breverage(Breverage::Coffee(coffee));
 
-    order_breverage(Breverage::Tea);
+    order_breverage(Breverage::Tea{_type: TeaTypes::Arabian});
 }
 
 fn order_breverage(breverage: Breverage){
@@ -46,8 +55,8 @@ fn order_breverage(breverage: Breverage){
         Breverage::Cocoa { temprature } =>{
             println!("You ordered {:#?}", Breverage::Cocoa{temprature});
         },
-        Breverage::Tea =>{
-            println!("You ordered {:#?}", Breverage::Tea);
+        Breverage::Tea{_type  } =>{
+            println!("You ordered {:#?}", Breverage::Tea{_type});
         }
     }
 }
